@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <!-- Basic SEO & Security -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data:;">
+    <meta name="description" content="j2ber | جابر - Streamer & Content Creator">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://j2ber.com/"> <!-- Update with real URL -->
+    <meta property="og:title" content="j2ber | جابر - Streamer & Content Creator">
+    <meta property="og:description" content="الموقع الرسمي لـ j2ber - ستريمر وصانع محتوى. تابعني على جميع المنصات!">
+    <meta property="og:image" content="assets/logo.webp">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="j2ber | جابر - Streamer & Content Creator">
+    <meta name="twitter:description" content="الموقع الرسمي لـ j2ber - ستريمر وصانع محتوى.">
+    <meta name="twitter:image" content="assets/logo.webp">
+
+    <title>j2ber | جابر - Streamer & Content Creator</title>
+
+    <!-- External Assets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Internal Assets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen flex flex-col no-select">
+
+    <!-- Header / Navbar -->
+    <header class="p-6 flex justify-between items-center max-w-7xl mx-auto w-full" data-aos="fade-down">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <span class="text-2xl font-black theme-text tracking-widest">j2ber</span>
+            <img src="assets/logo.webp" alt="Logo" class="w-10 h-10 rounded-lg">
+        </a>
+        <nav class="hidden md:flex gap-8 items-center">
+            <a href="index.html" class="nav-link active">الرئيسية</a>
+            <a href="accounts.html" class="nav-link">الحسابات</a>
+            <a href="https://discord.gg/j2b" target="_blank" class="nav-link">الدسكورد</a>
+            <a href="https://tip.dokan.sa/j2ber23" target="_blank" class="nav-link">الدعم</a>
+        </nav>
+        <div class="md:hidden text-2xl theme-text cursor-pointer">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col items-center justify-center pt-20 pb-10 px-4 relative">
+        <!-- Animated Main Logo -->
+        <div class="relative w-64 h-64 mb-8" data-aos="zoom-in">
+            <img src="assets/logo.webp" alt="Main Animated Logo" 
+                 class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-2xl glow floating-logo">
+        </div>
+
+        <h1 class="text-6xl font-black theme-text mb-2 tracking-widest uppercase" data-aos="fade-up">j2ber</h1>
+        <p class="text-gray-400 text-lg mb-12 flex items-center gap-2" data-aos="fade-up" data-aos-delay="200">
+            Streamer & Content Creator <i class="fas fa-gamepad theme-text"></i>
+        </p>
+
+        <!-- Main Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mb-12">
+            
+            <!-- Kick Stream Status Card -->
+            <div id="kick-status-card" class="card p-8 rounded-3xl flex flex-col items-center text-center" data-aos="fade-right" data-aos-delay="400">
+                <div class="flex items-center gap-2 mb-4 text-gray-400">
+                    <i class="fa-brands fa-kickstarter text-xl"></i>
+                    <span>حالة البث - Kick</span>
+                </div>
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="assets/logo.webp" alt="Streamer" class="w-16 h-16 rounded-full border-2 border-gray-700">
+                    <div class="text-right">
+                        <div class="font-bold text-xl">j2ber</div>
+                        <div id="stream-status" class="status-offline text-sm flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                            <span>أوف لاين</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="follower-count" class="text-gray-400 text-sm mb-6">جاري التحميل...</div>
+                <a href="https://kick.com/jaber1" target="_blank" class="w-full py-3 rounded-xl border border-gray-700 hover:bg-gray-800 transition-colors flex items-center justify-center gap-2">
+                    مشاهدة البث <i class="fas fa-external-link-alt text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Profile / Contact Card -->
+            <div class="card p-8 rounded-3xl flex flex-col items-center text-center" data-aos="fade-left" data-aos-delay="400">
+                <div class="relative mb-4">
+                    <img src="assets/logo.webp" alt="Profile" class="w-24 h-24 rounded-full border-4 border-red-500 glow">
+                    <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 theme-bg text-black text-xs font-bold px-3 py-1 rounded-full">
+                        J2BER
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1">جابر</h3>
+                <p class="text-gray-400 text-sm mb-6">ستريمر وصانع محتوى</p>
+                <div class="text-gray-400 text-xs mt-auto">شكراً لمتابعتكم</div>
+            </div>
+
+        </div>
+
+        <!-- Secondary Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl" data-aos="fade-up" data-aos-delay="600">
+            <a href="accounts.html" class="card p-6 rounded-2xl flex flex-col items-center text-center gap-3">
+                <i class="fas fa-users text-3xl theme-text"></i>
+                <div>
+                    <div class="font-bold">الحسابات</div>
+                    <div class="text-gray-400 text-xs">جميع حساباتي</div>
+                </div>
+            </a>
+            <a href="https://discord.gg/j2b" target="_blank" class="card p-6 rounded-2xl flex flex-col items-center text-center gap-3">
+                <i class="fa-brands fa-discord text-3xl theme-text"></i>
+                <div>
+                    <div class="font-bold">الدسكورد</div>
+                    <div class="text-gray-400 text-xs">انضم لسيرفري</div>
+                </div>
+            </a>
+            <a href="https://tip.dokan.sa/j2ber23" target="_blank" class="card p-6 rounded-2xl flex flex-col items-center text-center gap-3">
+                <i class="fas fa-heart text-3xl theme-text"></i>
+                <div>
+                    <div class="font-bold">الدعم DONATION</div>
+                    <div class="text-gray-400 text-[10px] leading-tight mt-1">دعمك راح يخليني اطور اشياء كثيرة وعسى ربي يرزقك اضعاف مضأعفه</div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-8 text-center text-gray-500 text-sm border-t border-gray-900" data-aos="fade-in">
+        <div class="mb-2">جميع الحقوق محفوظة &copy; 2026 - j2ber</div>
+        <div class="text-xs opacity-60">تم صنع الموقع من قبل <a href="https://discord.gg/rnbm7Ju29h" target="_blank" class="hover:theme-text transition-colors">متجر R7</a></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
